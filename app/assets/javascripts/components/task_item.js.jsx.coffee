@@ -76,7 +76,10 @@
                   `<strong>{this.props.task.title}</strong>`
                 else
                   `<a href="#" onClick={this.handleTitleClick}>{this.props.task.title}</a>`
+    multiEditNode = `<input type="checkbox" />`
+
     taskNode = `<td className="text-break">
+                 {multiEditNode}
                  {titleNode}
                  &nbsp;
                  <a href={this.props.task.html_url} target="_blank">
