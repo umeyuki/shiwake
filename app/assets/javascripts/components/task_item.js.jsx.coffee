@@ -76,10 +76,10 @@
                   `<strong>{this.props.task.title}</strong>`
                 else
                   `<a href="#" onClick={this.handleTitleClick}>{this.props.task.title}</a>`
-    multiEditNode = `<input type="checkbox" />`
+    checkboxNode = `<input type="checkbox" />`
 
     taskNode = `<td className="text-break">
-                 {multiEditNode}
+                 {checkboxNode}
                  {titleNode}
                  &nbsp;
                  <a href={this.props.task.html_url} target="_blank">
@@ -107,7 +107,7 @@
           </td>
         </td>
       </tr>`
-    else if @state.editing
+    else
       `<tr className={hidden}>
         {taskNode}
         <td>
@@ -124,11 +124,5 @@
             <i className="fa fa-fw fa-remove"></i>
           </button>
         </td>
-      </tr>`
-    else
-      `<tr className={hidden}>
-        {taskNode}
-        <td></td>
-        <td></td>
       </tr>`
 
