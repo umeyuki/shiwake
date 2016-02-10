@@ -107,7 +107,7 @@
           </td>
         </td>
       </tr>`
-    else
+    else if @state.editing
       `<tr className={hidden}>
         {taskNode}
         <td>
@@ -124,5 +124,11 @@
             <i className="fa fa-fw fa-remove"></i>
           </button>
         </td>
+      </tr>`
+    else
+      `<tr className={hidden}>    
+       {taskNode}    
+       <td></td>   
+       <td></td>   
       </tr>`
 
