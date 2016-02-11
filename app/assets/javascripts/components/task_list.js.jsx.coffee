@@ -28,7 +28,6 @@
       success: (data) =>
         @setState(parents: data)
       error: (jqXHR, textStatus, errorThrown) ->
-        console.error(jqXHR, textStatus, errorThrown)
         alert("#{textStatus}\n#{errorThrown}")
         @setState(editing: false)
       complete: =>
@@ -49,10 +48,11 @@
         onSave: @handleSaveItem
         parents: @state.parents
         teamId: @props.teamId
+        options: url2options(task.url)
       `<TaskItem {...props} key={task.id} />`
     
     parentsNode = @state.parents.map (parent) =>
-      `<option value={parent.id} key={parent.id}>{parent.label}</option>`
+      `<option value={parent.id} key={parent.id}>{parent.id}: {parent.label}</option>`
 
     `<div>
       <h3>Multi Update</h3>
@@ -79,4 +79,12 @@
         {itemNodes}
       </table>
     </div>`
+
+url2options = (url) ->
+  res = []
+  for filter in window.filters
+    if url.match(filter.pattern)
+      res = filter.options.split(',').map (id) =>
+        parseInt(id)
+  res
 
