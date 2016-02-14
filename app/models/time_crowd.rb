@@ -44,3 +44,4 @@ class TimeCrowd
     ).parsed
   end
 end
+
