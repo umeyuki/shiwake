@@ -20,8 +20,8 @@
     parent = React.findDOMNode(@refs.parent)
     return unless parent
     $(parent).select2()
-    #selected = if @props.options.length then @props.options[0] else 12333
-    selected = if @props.options.length then @props.options[0] else 11335
+    selected = if @props.options.length then @props.options[0] else 12333
+    #selected = if @props.options.length then @props.options[0] else 11335
     $(parent).select2('val', selected)
 
   shouldComponentUpdate: (nextProps, nextState) ->
