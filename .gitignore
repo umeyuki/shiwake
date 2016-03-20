@@ -23,6 +23,6 @@
 /coverage
 
 config/settings.local.yml
+config/settings/development.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
-
