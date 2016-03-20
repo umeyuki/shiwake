@@ -62,6 +62,7 @@ group :production do
 end
 
 gem 'omniauth-timecrowd', github: 'ruffnote/omniauth-timecrowd'
+gem 'omniauth-trello'
 gem 'rails_config'
 gem 'slim-rails'
 gem 'bootstrap-sass'
